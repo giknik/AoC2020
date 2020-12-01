@@ -11,7 +11,7 @@ def expense_report2(li):
         for j in li:
             for k in li:
                 if i != j and j != k and i + j + k == 2020:
-                    print(i*j)
+                    print(i*j*k)
                     return
 
 
