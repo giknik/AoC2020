@@ -8,16 +8,13 @@
 with open('data.txt') as f:
     lines = f.read().splitlines()
 
-invalid = 0
 valid = 0
 
 for line in lines:
     crit, char, passw = line.split(" ")
-    low, high = crit.split("-")
-    if (passw[int(low)-1] == char[0] and passw[int(high)-1] == char[0]) or \
-            (passw[int(low)-1] != char[0] and passw[int(high)-1] != char[0]):
-        invalid += 1
-    else:
+    low, high = map(int, crit.split("-"))
+    if not ((passw[low-1] == char[0] and passw[high-1] == char[0]) or
+            (passw[low-1] != char[0] and passw[high-1] != char[0])):
         valid += 1
 
 print(valid)
