@@ -26,10 +26,7 @@ for line in lines:
         else:
             if line[right[i]] == "#":
                 tree[i] += 1
-    right[0] += 1
-    right[1] += 3
-    right[2] += 5
-    right[3] += 7
+            right[i] += i*2 + 1
     down += 1
 
 print(math.prod(tree))
